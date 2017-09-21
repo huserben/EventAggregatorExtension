@@ -39,7 +39,7 @@ namespace ParallelAwarePubSubEvent
          // Execute event sequential.
          foreach (var subscriptionToPublish in eventSubscriptionsToPublish)
          {
-            subscriptionToPublish.Action(argument);
+            subscriptionToPublish.InvokeAction(subscriptionToPublish.Action, argument);
          }
       }
    }
